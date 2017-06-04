@@ -49,8 +49,33 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+                              @if(Auth::check())
+								
+								<!-- Se aluno -->
+								@if(Auth::user()->roles == 1)
+							   <img src="{{asset('dist/img/user9-160x145.jpg')}}" class="user-image" alt="User Image">
                                 <span class="hidden-xs">
+								@endif
+								
+								<!-- Se mentor -->
+								@if(Auth::user()->roles == 2)
+								
+								<img src="{{asset('dist/img/user8-128x128.jpg')}}" class="user-image" alt="User Image">
+                                <span class="hidden-xs">
+								
+								@endif
+								
+								<!-- Se administrador -->
+								@if(Auth::user()->roles == 3)
+								
+								<img src="{{asset('dist/img/user1-128x128.jpg')}}" class="user-image" alt="User Image">
+                                <span class="hidden-xs">
+								
+								@endif
+							
+							@endif
+								
+								
                                     @if(Auth::check())
                                          {{ Auth::user()->name }}
                                     @endif
