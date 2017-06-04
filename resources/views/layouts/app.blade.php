@@ -84,8 +84,38 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
-                                    <p>
+                                    
+									@if(Auth::check())
+								
+								<!-- Se aluno -->
+								@if(Auth::user()->roles == 1)
+							   <img src="{{asset('dist/img/user9-160x145.jpg')}}" class="img-circle" alt="User Image">
+                                
+								@endif
+								
+								<!-- Se mentor -->
+								@if(Auth::user()->roles == 2)
+								
+								<img src="{{asset('dist/img/user8-128x128.jpg')}}" class="img-circle" alt="User Image">
+                                
+								
+								@endif
+								
+								<!-- Se administrador -->
+								@if(Auth::user()->roles == 3)
+								
+								<img src="{{asset('dist/img/user1-128x128.jpg')}}" class="img-circle" alt="User Image">
+                                
+								
+								@endif
+							
+							@endif
+									
+									
+									
+                                    
+									
+									<p>
                                         @if(Auth::check())
                                             {{ Auth::user()->name }}
                                         @endif
@@ -119,7 +149,34 @@
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+					
+						@if(Auth::check())
+								
+								<!-- Se aluno -->
+								@if(Auth::user()->roles == 1)
+							   <img src="{{asset('dist/img/user9-160x145.jpg')}}" class="img-circle" alt="User Image">
+                                
+								@endif
+								
+								<!-- Se mentor -->
+								@if(Auth::user()->roles == 2)
+								
+								<img src="{{asset('dist/img/user8-128x128.jpg')}}" class="img-circle" alt="User Image">
+                                
+								
+								@endif
+								
+								<!-- Se administrador -->
+								@if(Auth::user()->roles == 3)
+								
+								<img src="{{asset('dist/img/user1-128x128.jpg')}}" class="img-circle" alt="User Image">
+                                
+								
+								@endif
+							
+							@endif
+					
+                        
                     </div>
                     <div class="pull-left info">
                         <p>
