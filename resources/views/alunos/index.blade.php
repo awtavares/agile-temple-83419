@@ -4,7 +4,7 @@
 
 <section class="content-header">
     <h1>
-        Eventos
+        Alunos
         <small>detalhes</small>
     </h1>
 </section>
