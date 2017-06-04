@@ -131,6 +131,17 @@
                        <a href="{{ route('app.oportunidades.index') }}">
                             <i class="fa ion-network"></i> <span>Oportunidades</span>
                        </a>
+					   
+					   
+					   @if(Auth::check() && Auth::user()->roles == 3)
+                        <a href="{{ route('app.alunos.index') }}">
+                            <i class="fa fa-users"></i> <span>Listar Alunos</span>
+                        </a>
+						@endif
+					   
+					   
+					   
+					   
                    </li>
 
                </ul>
