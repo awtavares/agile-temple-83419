@@ -1,0 +1,94 @@
+/* ------- Dash Style --------- */
+
+.mt-dash {
+    width: 96%;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.mt-grid {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.mt-grid li {
+	width: 24%;
+	margin: 0.25%;
+	background: #8CC7DF;
+	color: #fff;
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+}
+
+.mt-grid li.mt-span-2 {
+	width: 49%;
+	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+.mt-grid li h3 {
+	font-size: 2.6em;
+	font-weight: 100;
+	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	margin-left: 10px;
+}
+
+.mt-grid li[class^="grid-"]:before,
+.mt-grid li[class*="grid-"]:before {
+	font-size: 10em;
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	line-height: 3;
+	opacity: 0.4;
+	text-align: right;
+	pointer-events: none;
+}
+
+.mt-gridcontent {
+	display: block;
+	opacity: 0.5;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+	margin-left: 10px;
+}
+
+.mt-gridcontent p {
+	display: block;
+	font-size: 1.5em;
+	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+
+}
+
+.mt-grid li:hover .mt-gridcontent {
+	opacity: 1;
+}
+
+@media screen and (max-width: 63.125em) {
+	
+	.mt-grid li,
+	.mt-grid li.mt-span-2 {
+		width: 100%;
+		height: auto;
+		text-align: left;
+		font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	}
+
+	.mt-grid li[class^="grid-"]:before,
+	.mt-grid li[class*="grid-"]:before {
+		font-size: 6em;
+		left: auto;
+		right: 0;
+		line-height: 2.5;
+	}
+
+	.mt-grid li > div {
+		text-align: center;
+	}
+}

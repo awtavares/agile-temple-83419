@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'icomoon';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/icomoon/icomoon.eot');
+    src: url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/icomoon/icomoon.woff') format('woff'), 
+         url('../fonts/icomoon/icomoon.ttf') format('truetype'), 
+         url('../fonts/icomoon/icomoon.svg#bpicons') format('svg');
+} /* http://icomoon.io/ */
+
+/******* Mentoring Login Reset *******/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0;padding:0;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+a{text-decoration:none;}
+.txt-rt{text-align:right;}
+.txt-lt{text-align:left;}
+.txt-center{text-align:center;}
+.float-rt{float:right;}
+.float-lt{float:left;}
+.clear{clear:both;}
+.pos-relative{position:relative;}
+.pos-absolute{position:absolute;}
+.vertical-base{	vertical-align:baseline;}
+.vertical-top{	vertical-align:top;}
+.underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}
+nav.vertical ul li{	display:block;}
+nav.horizontal ul li{ display: inline-block;}
+img{max-width:100%;}
+/* Fim Reset */
+
+body {
+    background: #15243a;
+	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	font-size: 100%;
+
+}
+
+/******* Mentoring Login *******/
+.mt-login {
+    width: 30%;
+    padding: 2% 0;
+    margin: 8% auto 0;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.mt-login-content {
+    padding: 0px 25px;
+    margin-top: 3%;
+}
+
+.has-error strong {
+    font-size: 11px;
+    color: red;
+    font-weight: 500;
+    font-style: oblique;
+}
+
+.mt-login input[type="text"], .mt-login input[type="password"] {
+    outline: none;
+    font-size: 13px;
+    color: black;
+    padding: 20px 30px 10px 10px;
+    margin: 0;
+    width: 89.87%;
+    border: none;
+    border-bottom: 1px solid #cecfd3;
+    border-radius: 10px;
+}
+
+.mt-login input.name {
+    background: url(../img/user.png) no-repeat 98% 67%;
+}
+
+.mt-login input.email {
+    background: url(../img/email.png) no-repeat 98% 67%;
+}
+
+.mt-login input.password {
+    background: url(../img/pass.png) no-repeat 98% 67%;
+}
+
+.mt-login-btn ul{
+	padding: 0;
+	float: right;
+}
+
+.mt-login-btn ul li{
+	list-style: none;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 16px;
+}
+
+.mt-login-btn ul li p{
+	color: #b7b9c6;
+	font-size: 15px;
+}
+
+.mt-login-btn ul li span{
+	background:url(../img/social.png) no-repeat;
+	width: 34px;
+	height: 34px;
+	display: block;
+}
+
+.mt-login-btn ul li span:hover{
+	transition: 0.5s all ease;
+	-webkit-transition: 0.5s all ease;
+	-moz-transition: 0.5s all ease;
+	-o-transition: 0.5s all ease;
+	-ms-transition: 0.5s all ease;
+	opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+.mt-login-btn ul li span.face{
+	background-position: 0px 0px;
+}
+
+.mt-login-btn ul li span.twit{
+	background-position: -34px 0px;
+}
+
+.mt-login-btn ul li span.goog{
+	background-position: -68px 0px;
+}
+
+.mt-login-btn {
+    margin-top: 17%;
+
+}
+
+.submit{
+	float:none;
+}
+
+.submit input[type="submit"] {
+    font-size: 14px;
+    color: #47a3da;
+    background: #fff;
+    border: 1px solid #47a3da;
+    outline: none;
+    cursor: pointer;
+    padding: 6px 13px;
+    font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    border-radius: 10px;
+}
+
+.submit input[type="submit"]:hover{
+	background: #47a3da;
+	color: #fff;
+	transition: 0.5s all ease;
+	-webkit-transition: 0.5s all ease;
+	-moz-transition: 0.5s all ease;
+	-o-transition: 0.5s all ease;
+	-ms-transition: 0.5s all ease;
+}
+
+/******* Mentoring Logo Login *******/
+.logoicon {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.logoicon--mentoring::before {
+    content: "\ecd6";
+}
+
+.mt-heading {
+    font-size: 0.75em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.mt-logo {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    color: #3b3d4a;
+}
+
+.mentoring-icon {
+    font-size: 4em;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+
+/******* Mentoring Login Registro *******/
+.mt-registro ul {
+    width: 30%;
+	margin: 1% auto 0;
+	text-align: center;
+}
+
+.mt-registro ul li{
+	list-style:none;
+	display:inline-block;
+}
+.mt-registro ul li p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+}
+.mt-registro ul li p a{
+	color:#fff;
+}
+.mt-registro ul li p a:hover{
+	color:#5a5d63;
+	-webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.mt-registro ul span {
+    margin: 5px;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+}
+
+/******* Media Queries Login *******/

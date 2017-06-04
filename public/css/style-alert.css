@@ -1,0 +1,48 @@
+/* ------- Mentoring Alert Style --------- */
+ 
+.alert-box {
+    width: 95%;
+    margin: 5px auto;
+    padding: 10px 30px;
+    background-position: 2% 7px;
+    background-repeat: no-repeat;
+    background-size: auto 2rem;
+    background-color: #f7f7f7;
+    border: 0;
+    text-align: left;
+    font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-style: oblique;
+    font-weight: 500;
+}
+
+.alert-box .close {
+    background: none;
+    color: #c5c8cc;
+    float: right;
+    font-size: 15px;
+}
+
+ 
+
+.alert-box .close:hover {
+    color: #3a3b3d;
+}
+
+.alert-box.alert {
+    background-color: #fff;
+    border-top: 2px solid #f22613;
+    color: #333;
+}
+
+.alert-box.info {
+    background-color: #fff;
+    border-top: 2px solid #89c4f4;
+    color: #333;
+}
+
+.alert-box.success {
+    background-color: #fff;
+    border-top: 2px solid #87d37c;
+    color: #333;
+}

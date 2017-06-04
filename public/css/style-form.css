@@ -1,0 +1,229 @@
+/* ------- Form Style --------- */
+
+.mt-form {
+    width: 95%;
+    margin: 5px auto;
+    background-color: #fff;
+    border: 1px solid #f3f3f3;
+    padding: 15px 30px;
+}
+
+.mt-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #555555;
+}
+
+.mt-form .form-mentoring {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.mt-form .form-mentoring-down {
+    position: relative;
+    width: 22%;
+    margin-bottom: 25px;
+}
+
+.mt-form .has-error strong {
+    font-size: 11px;
+    color: red;
+    font-style: oblique;
+    font-weight: 500;
+}
+
+.mt-form input {
+    padding: 1% 1%;
+    margin-right: 10%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 90%;
+    font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    -webkit-appearance: none;
+}
+
+.mt-form textarea {
+    padding: 1% 1%;
+    margin-right: 10%;
+    border:none;
+    border-bottom:1px solid #ccc;
+    width:90%;
+    height: 10em;
+    font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    -webkit-appearance: none;
+}
+
+.mt-form input#submit {
+    width:10%;
+    font-size: 12px;
+    color: #47a3da;
+    background: #fff;
+    border: 1px solid #47a3da;
+    outline: none;
+    cursor: pointer;
+    padding: 6px 13px;
+    font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+.mt-form input.btn-redireciona {
+    width:12%;
+    font-size: 12px;
+    color: #4e77c9;
+    background: #fff;
+    border: 1px solid #4e77c9;
+    outline: none;
+    cursor: pointer;
+    padding: 6px 13px;
+    font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+.mt-form input#submit:hover,
+.mt-form input#submit:focus {
+    background: #47a3da;
+    color: #fff;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+}
+
+.mt-form input.btn-redireciona:hover,
+.mt-form input.btn-redireciona:focus {
+    background: #4e77c9;
+    color: #fff;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+}
+
+.mt-form .mt-form-btn {
+    width: 100%;
+}
+
+.mt-form .mt-form-btn .btn {
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    padding: 6px 13px;
+    font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.mt-form .mt-form-btn .btn.vrd {
+    border: 1px solid #5EA226;
+    color: #5EA226;
+    cursor: pointer;
+}
+
+.mt-form .mt-form-btn .btn.vrd:hover,
+.mt-form .mt-form-btn .btn.vrd:focus {
+    background: #5EA226;
+    color: #fff;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+}
+
+.mt-form .mt-form-btn .btn.red {
+    border: 1px solid #fc8183;
+    color: #fc8183;
+    cursor: pointer;
+}
+
+.mt-form .mt-form-btn .btn.red:hover,
+.mt-form .mt-form-btn .btn.red:focus {
+    background: #fc8183;
+    color: #fff;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+}
+
+select {
+    overflow: hidden;
+    padding: 1% 1%;
+    margin-right: 80%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 20%;
+    font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    -webkit-appearance: none;
+
+}
+
+/******* Mentorinf Form input File *******/
+
+.mt-form .mt-inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.mt-form .mt-downfile {
+    width: 100%;
+    height: 88px;
+    opacity: 0;
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.mt-form .mt-downfile + label,
+.mt-form .mt-inputfile + label {
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    margin: 0;
+    color: #555555;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+}
+
+.mt-form .mt-icon:after {
+    font-family: 'icomoon';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    text-align: center;
+    align-content: center;
+    text-transform: none;
+    color: #555555;
+    -webkit-font-smoothing: antialiased;
+    speak: none;
+}
+
+.mt-form .mt-icon--upload:after {
+    content: '\ebb1';
+    font-size: 2em;
+}
+
+.mt-form .mt-icon--down:after {
+    content: '\e9c5';
+    font-size: 2em;
+}
+
+.mt-form .mt-downfile + label:hover .mt-icon,
+.mt-form .mt-downfile + label:hover,
+.mt-form .inputfile_mt + label:hover .mt-icon,
+.mt-form .inputfile_mt + label:hover {
+    color: #ccc;
+}
