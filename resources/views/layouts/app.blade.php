@@ -210,6 +210,14 @@
                         <a href="{{ route('app.eventos.index') }}">
                             <i class="fa fa-calendar"></i> <span>Eventos</span>
                        </a>
+					   
+					   @if(Auth::check() && Auth::user()->roles > 1)
+                        <a href="{{ route('app.eventos.pendentes') }}">
+                            <img src="{{asset('img/confirm-schedule.png')}}" > <span>Eventos Pendentes</span>
+                        </a>
+                    @endif
+					   
+					   
                        <a href="{{ route('app.oportunidades.index') }}">
                             <i class="fa ion-network"></i> <span>Oportunidades</span>
                        </a>
