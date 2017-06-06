@@ -1,0 +1,315 @@
+
+/* ------- Mentoring Table Style --------- */
+
+.mt-table {
+    width: 95%;
+    margin: 5px auto;
+    background-color: #fff;
+    border: 1px solid #f3f3f3;
+    padding: 15px 30px;
+}
+
+.mt-table_header {
+    width: 100%;
+}
+
+.mt-table_header p {
+    float: left;
+    padding-right: 20px;
+}
+
+.mt-table_header .mt-table-btn {
+    float: left;
+    margin: 15px 0;
+}
+
+.mt-table_header .mt-table-btn .bt-padrao {
+    width:10%;
+    font-size: 12px;
+    color: #47a3da;
+    background: #fff;
+    border: 1px solid #47a3da;
+    outline: none;
+    cursor: pointer;
+    padding: 6px 13px;
+    font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.mt-table_header .mt-table-btn .bt-padrao:hover,
+.mt-table_header .mt-table-btn .bt-padrao:focus {
+    background: #47a3da;
+    color: #fff;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+}
+
+.table > thead > tr,
+.table > tbody > tr,
+.table > tfoot > tr {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    text-align: left;
+    padding: 0.4rem;
+    vertical-align: top;
+    border-top: 0;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    color: #757575;
+    font-size: 13px;
+}
+
+.table > thead > tr > th {
+    font-weight: 300;
+    font-weight:bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #555555;
+    vertical-align: bottom;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.table > tbody + tbody {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.table .no-border {
+    border: 0;
+    width: auto;
+}
+
+.table .not-active, 
+.table .not-active:hover {
+    cursor: not-allowed; 
+    color: #cecfd3;
+    pointer-events: none;
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.table-hover > tbody > tr:hover > td.no-status {
+    background: #fff;
+}
+
+.table-hover > tbody > tr:hover > td:last-child,
+.table-hover > tbody > tr:hover > th:last-child {
+    background-color: #fff;
+}
+
+
+/* ------- Mentoring Circle Style --------- */
+.big-circle {
+  display: inline-block;
+  width: 2.2vh;
+  height: 2.2vh;
+  background-color: lightblue;
+  border-radius: 50%;
+  margin-left: 20%;
+}
+
+.big-circle.verd {
+    background: #5EA226;
+}
+
+.big-circle.amar {
+    background: #f4d442;
+}
+
+.big-circle.verm {
+    background: #f45042;
+}
+
+
+/* ------- Mentoring Icon Table Style --------- */
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    padding: 0.50em 0.50em;
+    color: #2a2b30;
+    font-size: 1.25em;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-eye2:before {
+    content: "\ebb9";
+}
+
+.icon-eye2:hover:before {
+    color: #cecfd3;
+}
+
+
+.icon-pencil3:before {
+    content: "\eaf0";
+}
+
+.icon-pencil3:hover:before {
+    color: #cecfd3;
+}
+
+.icon-bin3:before {
+    content: "\eb97";
+}
+
+.icon-bin3:hover:before {
+    color: #cecfd3;
+}
+
+/* ------- Mentoring Pagination Table Style --------- */
+
+.pagination {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style: none;
+    cursor: default;
+    font-size: 11px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.pagination li {
+    position: relative;
+    display: block;
+    float: left;
+    cursor: pointer;
+    margin: 0 3px;
+    padding: 3px;
+}
+
+.pagination span {
+    margin: 0;
+    padding: 3px;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.pagination li a {
+    color: rgba(0, 0, 0, 2);
+    color: #757575;
+    padding: 3px;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: .4;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.pagination li:hover,
+.pagination li:focus {
+    color: #555555;
+    border-bottom: 1px solid #757575;
+}
+
+.pagination .disabled {
+    color: rgba(46, 64, 87, 0.4);
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.pagination .active {
+    color: #66a0ff;
+    padding: 3px;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+/* ------- Mentoring Media Query Table Style --------- */
+
+@media screen and (max-width: 40em) {
+    .table-responsive-vertical > .table {
+        margin-bottom: 0;
+        background-color: transparent;
+    }
+    
+    .table-responsive-vertical > .table > thead,
+    .table-responsive-vertical > .table > tfoot {
+        display: none;
+    }
+    .table-responsive-vertical > .table > tbody {
+        display: block;
+    }
+
+    .table-responsive-vertical > .table > tbody > tr {
+        display: block;
+        border: 1px solid #e0e0e0;
+        border-radius: 2px;
+        margin-bottom: 1.6rem;
+    }
+  
+    .table-responsive-vertical > .table > tbody > tr > td {
+        background-color: #ffffff;
+        display: block;
+        vertical-align: middle;
+        text-align: right;
+    }
+
+    .table-responsive-vertical > .table > tbody > tr > td[data-title]:before {
+        content: attr(data-title);
+        float: left;
+        font-size: inherit;
+        font-weight: 300;
+        color: #757575;
+    }
+
+    .table-responsive-vertical > .table-striped > tbody > tr > td,
+    .table-responsive-vertical > .table-striped > tbody > tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+  
+    .table-responsive-vertical > .table-striped > tbody > tr > td:nth-child(odd) {
+        background-color: #f5f5f5;
+    }
+
+    .table-responsive-vertical > .table-hover > tbody > tr:hover > td,
+    .table-responsive-vertical > .table-hover > tbody > tr:hover {
+        background-color: #ffffff;
+    }
+
+    .table-responsive-vertical > .table-hover > tbody > tr > td:hover {
+        background-color: rgba(0, 0, 0, 0.12);
+    }
+}
