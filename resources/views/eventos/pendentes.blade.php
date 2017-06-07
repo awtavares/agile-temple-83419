@@ -37,7 +37,7 @@
                                         <td>{{ $evento->id }}</td>
                                         <td>{{ $evento->nome }}</td>
                                         <td>{{ $evento->local }}</td>
-                                        <td>{{ $evento->data_do_evento }}</td>
+                                        <td>{{ date('d/m/Y', strtotime($evento->data_do_evento)) }}</td>
                                         <td>{{ $evento->telefone }}</td>
 
                                         <td>
