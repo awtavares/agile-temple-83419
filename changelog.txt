@@ -1,0 +1,29 @@
+Changelog -
+
+Front-end
+
+    1.0 Conectei as telas cadastro de usuário e recuperação de usuário
+
+    1.1 Coloquei os banners em cada usuário ( Aluno, Mentor e Admin) na home.
+
+    1.2 Listar, cadastrar e visualizar oportunidades.A editar oportunidade é praticamente a mesma coisa do visualizar, então tá praticamente feita tbm
+
+    ...
+
+Back-end
+    1.0
+        Criação da demanda por aluno
+    1.1
+        Redirecionar a demanda para a administração
+    1.2
+        Listagem de demandas
+    1.3
+        Visualização de demandas
+    2.0
+        Encaminhamento da demanda para o mentor
+    3.0
+        Exibição de apenas as demandas do mentor
+    ...
+
+
+//Atualização 04/05
