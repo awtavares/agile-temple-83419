@@ -51,12 +51,12 @@
     <div class="mt-registro">
         <ul>
 
-            <li><p>Faça <a href="{{ url('/login') }}">login.</a></p></li>
+            <li><p>Faça <a href="{{ url('/logar') }}">login.</a></p></li>
             <span>|</span>
-            <li><p>Não possui <a href="{{ url('/register') }}">conta?</a></p></li>
+            <li><p>Não possui <a href="{{ url('/logar/criar') }}">conta?</a></p></li>
             <div class="clear"></div>
 
-            
+
         </ul>
     </div>
 
