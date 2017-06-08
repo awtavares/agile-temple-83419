@@ -21,24 +21,30 @@
         @endif
         <div class="mt-login-content">
 
-            {!! Form::open(['method' => 'POST', 'route' => 'login.newPasswordReset', 'id'=> $user->id]) !!}
-            {{ csrf_field() }}
-            <div class="form-email{{ $errors->has('email') ? ' has-error' : '' }}">
-                <input id="senha" name="password" type="password" class="email" placeholder="Digite sua nova senha" />
-                <input id="rSenha" name="rPassword" type="password" class="email" placeholder="Repita a seha informada" />
-                @if ($errors->has('email'))
-                    <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
-                @endif
-            </div>
+            @if($user)
+                @foreach($user as $item)
+                    {!! Form::open(['method' => 'POST', 'route' => ['login.newPasswordReset', 'id'=> $item->id]]) !!}
 
-            <div class="mt-login-btn">
-                <div class="submit">
-                    <input type="submit" value="ALTERAR SENHA"/>
+                    {{ csrf_field() }}
+                <div class="form-email{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <input id="senha" name="password" type="password" class="email" placeholder="Digite sua nova senha" />
+                    <input id="rSenha" name="rPassword" type="password" class="email" placeholder="Repita a seha informada" />
+                    @if ($errors->has('email'))
+                        <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
+                    @endif
                 </div>
 
-                <div class="clear"></div>
-            </div>
-            </form>
+                <div class="mt-login-btn">
+                    <div class="submit">
+                        <input type="submit" value="ALTERAR SENHA"/>
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+            {!! Form::close() !!}
+                   @endforeach
+            @endif
+
         </div>
     </div>
 

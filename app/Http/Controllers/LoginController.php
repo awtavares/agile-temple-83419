@@ -5,6 +5,7 @@ namespace Mentor\Http\Controllers;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Mentor\Models\User;
 use Mentor\Repositories\UserRepositoryEloquent;
 
 class LoginController extends Controller
@@ -15,7 +16,7 @@ class LoginController extends Controller
      */
     private $eloquent;
 
-    public function __construct(UserRepositoryEloquent $eloquent)
+    public function __construct(User $eloquent)
     {
         $this->eloquent = $eloquent;
     }
@@ -43,36 +44,40 @@ class LoginController extends Controller
         return redirect()->route('login.index');
     }
 
-    public function register(){
+    public function register()
+    {
         return view('auth.register');
     }
 
-    public function reset(){
+    public function reset()
+    {
         return view('auth.passwords.email');
     }
 
-    public function resetPassword(){
+    public function resetPassword()
+    {
         return view('auth.passwords.resetPassword');
     }
 
-    public function newPassword(Request $request){
-        $user = $this->eloquent->findByField('email', $request['email']);
-        if($user){
+    public function newPassword(Request $request)
+    {
+        $user = $this->eloquent->where('email', $request['email'])->get();
+        if($user):
             return view('auth.passwords.resetPassword', compact('user'));
-        }else{
+        else:
             $request->session()->flash('error', 'E-mail não existe');
-            return;
-        }
+            return redirect()->back();
+        endif;
     }
 
-    public function newPasswordReset(Request $request, $id){
-        if($request['password'] === $request['rPassword']){
-            dd($id);
+    public function newPasswordReset(Request $request, $id)
+    {
+        if($request['password'] === $request['rPassword']):
             $user = $this->eloquent->find($id);
             $user->password = bcrypt($request['password']);
             $user->save();
             return redirect()->route('login.index');
-        }
+        endif;
     }
 
     public function create(Request $request){
