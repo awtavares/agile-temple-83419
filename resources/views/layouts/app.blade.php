@@ -49,7 +49,7 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                             
+
 								
 								
                                     @if(Auth::check())
@@ -106,15 +106,7 @@
 					
                         
                     </div>
-                    <div class="pull-left info">
-                        <p>
-                            @if(Auth::check())
-                                {{ Auth::user()->name }}
-                            @endif
-                        </p>
-
-
-                    </div>
+                    
                 </div>
 
                 <ul class="sidebar-menu">
