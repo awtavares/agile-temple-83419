@@ -35,8 +35,8 @@ class EventosController extends Controller
     public function index()
     {
         // CORRIGINDO......
-//        $eventos = $this->eventosService->listarEventos();
-        $eventos = $this->repositoryEloquent->paginate(5);
+        $eventos = $this->eventosService->listarEventos();
+//        $eventos = $this->repositoryEloquent->paginate(5);
 
 		return view('eventos.index', compact('eventos'));
 	}
