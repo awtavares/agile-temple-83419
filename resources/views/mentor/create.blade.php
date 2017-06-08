@@ -17,8 +17,14 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Novo mentor</h3>
                     </div>
+
+                    @if(Session::has('error'))
+                        <div class="alert alert-danger">
+                            {{  Session::get('error') }}
+                        </div>
+                    @endif
                     {!! Form::open(['class' => 'form-horizontal', 'method' => 'POST', 'name' => 'form', 'route' => 'app.mentor.store']) !!}
-                        @include('mentor.forms')
+                    @include('mentor.forms')
                     {!! Form::close() !!}
                 </div>
 
