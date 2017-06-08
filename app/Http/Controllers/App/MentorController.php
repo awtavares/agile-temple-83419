@@ -51,9 +51,13 @@ class MentorController extends Controller
 
     public function store(Request $request)
     {
-        $this->mentorService->createMentor($request->all());
-
-        return redirect()->route('app.mentor.index');
+        $mentor = $this->mentorService->createMentor($request->all());
+        if($mentor) {
+            return redirect()->route('app.mentor.index');
+        }else{
+            $request->session()->flash('error', 'Mentor não foi cadastrado, pois já existe um usuário com o e-mail informado' );
+            return redirect()->route('app.mentor.create');
+        }
     }
 
     public function show($id)

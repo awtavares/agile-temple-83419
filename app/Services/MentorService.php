@@ -49,17 +49,31 @@ class MentorService
         }
     }
 
+
+    public function emailJaCadastrado($email)
+    {
+        try {
+            return (sizeof( DB::table('users')->where('email',$email)->get() ) >= 1 );
+        } catch (QueryException $q) {
+            $q->getMessage();
+        }
+
+    }
+
     public function createMentor(array $data)
     {
         try {
-            $mentor = $this->userRepositoryEloquent->create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                // Alteração feita por causa do envio de e-mail
-                'password' => bcrypt($data['password']),
-                'roles' => 2,
-                'remember_token' => str_random(10),
-            ]);
+            $mentor = null;
+            if( !$this->emailJaCadastrado( $data['email'] ) ){
+                $mentor = $this->userRepositoryEloquent->create([
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    // Alteração feita por causa do envio de e-mail
+                    'password' => bcrypt($data['password']),
+                    'roles' => 2,
+                    'remember_token' => str_random(10),
+                ]);
+            }
             if($mentor):
                 // Criar um evento e jogar numa queue, se não vai dar lag
                 Mail::send('email.welcome', ['mentor' => $mentor], function ($message) use ($mentor) {
