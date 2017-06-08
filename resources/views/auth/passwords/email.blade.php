@@ -14,9 +14,14 @@
             <h2 class="mt-heading">Mentoring</h2>
         </div>
 
+            @if(Session::has('error'))
+                <div class="alert alert-danger">
+                    {{  Session::get('error') }}
+                </div>
+            @endif
         <div class="mt-login-content">
 
-            <form method="POST" action="{{ url('/password/email') }}">
+            {!! Form::open(['method' => 'POST', 'route' => 'login.newPassword']) !!}
                 {{ csrf_field() }}
                 <div class="form-email{{ $errors->has('email') ? ' has-error' : '' }}">
                     <input id="email" name="email" type="text" class="email" placeholder="E-mail" value="{{ old('email') }}" />
@@ -45,9 +50,15 @@
 
     <div class="mt-registro">
         <ul>
+<<<<<<< HEAD
             <li><p>Faça <a href="{{ url('/login') }}">login.</a></p></li>
             <span>|</span>
             <li><p>Não possui <a href="{{ url('/register') }}">conta?</a></p></li>
+=======
+            <li><p>Faça <a href="{{ route('login.index') }}">login.</a></p></li>
+            <span>|</span>
+            <li><p>Não possui <a href="{{ route('login.register') }}">conta?</a></p></li>
+>>>>>>> 098121af26171ef76286f9939cbb0d4a4017307d
             <div class="clear"></div>
         </ul>
     </div>

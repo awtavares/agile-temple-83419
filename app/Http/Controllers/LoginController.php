@@ -47,6 +47,34 @@ class LoginController extends Controller
         return view('auth.register');
     }
 
+    public function reset(){
+        return view('auth.passwords.email');
+    }
+
+    public function resetPassword(){
+        return view('auth.passwords.resetPassword');
+    }
+
+    public function newPassword(Request $request){
+        $user = $this->eloquent->findByField('email', $request['email']);
+        if($user){
+            return view('auth.passwords.resetPassword', compact('user'));
+        }else{
+            $request->session()->flash('error', 'E-mail não existe');
+            return;
+        }
+    }
+
+    public function newPasswordReset(Request $request, $id){
+        if($request['password'] === $request['rPassword']){
+            dd($id);
+            $user = $this->eloquent->find($id);
+            $user->password = bcrypt($request['password']);
+            $user->save();
+            return redirect()->route('login.index');
+        }
+    }
+
     public function create(Request $request){
         try {
             $dadosUsuario = $request->all();
