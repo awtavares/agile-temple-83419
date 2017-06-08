@@ -59,21 +59,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
-                                <li class="user-header">
-                                    
-
-									
-									
-									
-                                    
-									
-									<p>
-                                        @if(Auth::check())
-                                            {{ Auth::user()->name }}
-                                        @endif
-                                        {{--<small>Periodo: 2017.1</small>--}}
-                                    </p>
-                                </li>
+                                
 
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
@@ -106,7 +92,7 @@
 					
                         
                     </div>
-                    
+
                 </div>
 
                 <ul class="sidebar-menu">
