@@ -58,9 +58,9 @@
 
     <div class="mt-registro">
         <ul>
-                <li><p>Não possui <a href="{{ route('login.index') }}">conta?</a></p></li>
+            <li><p>Não possui <a href="{{ route('login.register') }}">conta?</a></p></li>
             <span>|</span>
-            <li><p>Esqueceu a <a href="{{ url('/password/reset') }}">senha?</a></p></li>
+            <li><p>Esqueceu a <a href="{{ route('login.reset') }}">senha?</a></p></li>
             <div class="clear"></div>
         </ul>
     </div>

@@ -82,10 +82,10 @@
     <div class="clear"></div>
 
     <div class="mt-registro">
-        <ul>{{ route('login.register') }}
-            <li><p>Faça <a href="{{ route('login') }}">login.</a></p></li>
+        <ul>
+            <li><p>Faça <a href="{{ route('login.index') }}">login.</a></p></li>
             <span>|</span>
-            <li><p>Esqueceu a <a href="{{ url('/password/reset') }}">senha?</a></p></li>
+            <li><p>Esqueceu a <a href="{{ route('login.reset') }}">senha?</a></p></li>
             <div class="clear"></div>
         </ul>
     </div>

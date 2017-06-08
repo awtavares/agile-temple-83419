@@ -20,8 +20,12 @@ Route::group(['prefix' => 'logar', 'as' => 'login.'], function () {
     Route::get('/', ['as' => 'index', 'uses' => 'LoginController@index']);
     Route::get('/criar', ['as' => 'register', 'uses' => 'LoginController@register']);
     Route::get('/deslogar', ['as' => 'logout', 'uses' => 'LoginController@logout']);
+    Route::get('/reset', ['as' => 'reset', 'uses' => 'LoginController@reset']);
+    Route::get('/resetPassword', ['as' => 'resetPassword', 'uses' => 'LoginController@resetPassword']);
     Route::post('/logar', ['as' => 'auth', 'uses' => 'LoginController@auth']);
     Route::post('/criar', ['as' => 'create', 'uses' => 'LoginController@create']);
+    Route::post('/novaSenha', ['as' => 'newPassword', 'uses' => 'LoginController@newPassword']);
+    Route::post('/newPasswordReset/{id}', ['as' => 'newPasswordReset', 'uses' => 'LoginController@newPasswordReset']);
 });
 
 Route::group(['prefix' => 'app', 'as' => 'app.', 'namespace' => 'App', 'middleware' => 'check'], function () {
