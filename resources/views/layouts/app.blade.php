@@ -59,7 +59,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
-                                
+
 
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
