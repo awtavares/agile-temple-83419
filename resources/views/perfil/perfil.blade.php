@@ -48,6 +48,7 @@
                                     <input type="text"  class="form-control" id="inputEmail3" placeholder="E-mail"
                                            name="email" value="{{$user->email}}">
                                 </div>
+                                <br>
                                 <div class="col-md-2">
                                     <button type="submit" class="btn btn-block btn-success btn-flat" >Atualizar dados</button>
                                 </div>
