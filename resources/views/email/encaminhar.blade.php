@@ -1,6 +1,6 @@
-Caro, Mediador
+Caro Mentor
 
-Uma nova demanda foi cadastrada no Mentoring.
+Uma nova demanda foi direcionado para você no Mentoring.
 
 <table>
 
@@ -9,4 +9,4 @@ Uma nova demanda foi cadastrada no Mentoring.
         <td>{{$demanda->student}}</td>
     </tr>
 </table>
-    Para direcioná-la a um mentor, gentileza acessar o sistema Mentoring
+Para responde-la, gentileza acessar o sistema Mentoring

@@ -1,4 +1,4 @@
-Caro, Mediador
+Caro Mediador
 
 Uma nova demanda foi cadastrada no Mentoring.
 

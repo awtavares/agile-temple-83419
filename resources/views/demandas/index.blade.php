@@ -30,7 +30,6 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Email</th>
                                     <th>Assunto</th>
                                     <th>Status</th>
                                     <th>Ações</th>
@@ -40,7 +39,6 @@
                                 @foreach($demands as $demand)
                                     <tr>
                                         <td>{{ $demand->id }}</td>
-                                        <td>{{ $demand->email }}</td>
                                         <td>{{ $demand->subject }}</td>
                                         <td>
                                             @if($demand->status == 1)
