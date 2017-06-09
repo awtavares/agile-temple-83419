@@ -153,8 +153,8 @@ class DemandController extends Controller
         $selectMentor->save();
 
         Mail::send('email.encaminhar', ['demanda' => $demandFind], function ($message) use ($selectMentor) {
-            $message->from('joaomarcusjesus@gmail.com', 'Mentoring - Unipê 2017');
-            $message->to($selectMentor->email)->subject('Cadastro feito com sucesso!');
+            $message->from('joaomarcusjesus@gmail.com', 'Sistema Mentoring');
+            $message->to($selectMentor->email)->subject('Sistema Mentoring');
         });
 
         return redirect()->route('app.demand.index');

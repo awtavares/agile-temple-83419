@@ -3,7 +3,7 @@
 Sua credencial:
 <ul>
     <li> {{ $mentor->email }}</li>
-    <li> {{ $mentor->password }}</li>
+
 </ul>
 
 <footer>
