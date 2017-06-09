@@ -99,9 +99,11 @@
 
 
 
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                <button type="submit" class="btn btn-block btn-success btn-flat">Atualizar Senha</button>
+                                </div>
 
-                            <div class="col-md-2">
-                                <button type="submit" class="btn btn-block btn-success btn-flat" style="margin-left: 111%;">Atualizar Senha</button>
                             </div>
                         </div>
 
