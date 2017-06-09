@@ -11,7 +11,7 @@ use Mentor\Repositories\DemandRepositoryEloquent;
 use Mentor\Repositories\PerfomanceRepositoryEloquent;
 use Mentor\Repositories\UserRepositoryEloquent;
 use Mentor\Services\DemandService;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class DemandController extends Controller
 {
@@ -152,6 +152,10 @@ class DemandController extends Controller
         $selectMentor->qtd = $selectMentor->qtd + 1;
         $selectMentor->save();
 
+        Mail::send('email.encaminhar', ['demanda' => $demandFind], function ($message) use ($selectMentor) {
+            $message->from('joaomarcusjesus@gmail.com', 'Mentoring - Unipê 2017');
+            $message->to($selectMentor->email)->subject('Cadastro feito com sucesso!');
+        });
 
         return redirect()->route('app.demand.index');
 

@@ -45,7 +45,7 @@ class UserService
                 );
 
 
-                $this->repositoryEloquent->update($user, $request['user_id']);
+                $this->userRepository->update($user, $request['user_id']);
                 $atualizou = true;
             else:
 

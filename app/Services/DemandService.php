@@ -16,6 +16,7 @@ use Mentor\Repositories\ActRepositoryEloquent;
 use Mentor\Repositories\DemandRepositoryEloquent;
 use Mentor\Repositories\PerfomanceRepositoryEloquent;
 use Mentor\Repositories\UserRepositoryEloquent;
+use Illuminate\Support\Facades\Mail;
 
 
 class DemandService
@@ -84,9 +85,20 @@ class DemandService
                 'title' => $data['title'],
                 'subject' => $data['subject'],
                 'doubt' => $data['doubt'],
-                'email' => $data['email'],     
+                'email' => $this->getEmailUser(),
                 'user_id' => $this->getMyUserById()
             ]);
+
+            $admins = DB::table('users')->where('roles', 3)->get();
+
+            foreach ($admins as $admin){
+
+                Mail::send('email.createDemand', ['aluno' => $data], function ($message) use ($admin) {
+                    $message->from('joaomarcusjesus@gmail.com', 'Mentoring - Unipê 2017');
+                    $message->to($admin->email)->subject('Cadastro feito com sucesso!');
+                });
+            }
+
 
         } catch (QueryException $exception) {
             $exception->getMessage();
@@ -140,6 +152,13 @@ class DemandService
     {
         if ($this->getMyAuth()):
             return Auth::user()->id;
+        endif;
+    }
+
+    private function getEmailUser()
+    {
+        if ($this->getMyAuth()):
+            return Auth::user()->email;
         endif;
     }
 

@@ -2,9 +2,8 @@
     <div class="box-body">
 
         <div class="form-group">
-            {!! Form::label('email', 'E-mail', ['class' => 'col-sm-2 control-label']) !!}
             <div class="col-sm-6">
-                {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'E-mail', 'name' => 'email']) !!}
+                {!! Form::hidden('email', null, ['class' => 'form-control', 'placeholder' => 'E-mail', 'name' => 'email']) !!}
             </div>
         </div>
 
