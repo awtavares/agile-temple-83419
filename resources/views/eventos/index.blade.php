@@ -44,7 +44,7 @@
                                                    <a href="{{ route('app.eventos.show', $evento->id)  }}"><button class="btn btn-success btn-sm">Visualizar</button></a>
 
                                                     @if(Auth::check())
-                                                        @if(Auth::user()->roles == 3)
+                                                        @if(Auth::user()->roles == 3 && 2)
 
                                                          <a href="{{ route('app.eventos.edit', $evento->id)  }}"><button class="btn btn-info btn-sm">Editar</button></a>
 
