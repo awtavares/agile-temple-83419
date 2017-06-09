@@ -48,14 +48,12 @@
                                     <input type="text"  class="form-control" id="inputEmail3" placeholder="E-mail"
                                            name="email" value="{{$user->email}}">
                                 </div>
-
-                            </div>
-
-                            <div class="form-group">
                                 <div class="col-md-2">
-                                <button type="submit" class="btn btn-block btn-success btn-flat" style="margin-left: 112%;">Atualizar dados</button>
+                                    <button type="submit" class="btn btn-block btn-success btn-flat" >Atualizar dados</button>
                                 </div>
                             </div>
+
+
 
                         </div>
 

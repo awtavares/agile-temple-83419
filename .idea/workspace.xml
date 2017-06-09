@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5827191-47c8-496f-9adf-5a5ac4a0f5bd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/perfil/perfil.blade.php" afterPath="$PROJECT_DIR$/resources/views/perfil/perfil.blade.php" />
     </list>
     <ignored path="mentoring-1.iws" />
@@ -57,8 +56,8 @@
       <file leaf-file-name="perfil.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/perfil/perfil.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+            <state relative-caret-position="1246">
+              <caret line="108" column="16" lean-forward="false" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -314,12 +313,12 @@
       <workItem from="1496939693831" duration="806000" />
       <workItem from="1496942117337" duration="1150000" />
       <workItem from="1497014055757" duration="2034000" />
-      <workItem from="1497027397328" duration="1462000" />
+      <workItem from="1497027397328" duration="1890000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19999000" />
+    <option name="totallyTimeSpent" value="20427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1272" y="-8" width="1296" height="784" extended-state="6" />
@@ -713,8 +712,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/perfil/perfil.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+        <state relative-caret-position="1246">
+          <caret line="108" column="16" lean-forward="false" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
           <folding />
         </state>
       </provider>
