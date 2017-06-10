@@ -26,11 +26,19 @@
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Resposta:</label>
                                 <div class="col-sm-6">
-                                    <textarea cols="100" rows="10" style=" resize: none;" name="answer" placeholder=""></textarea>
+                                    <textarea cols="100" rows="10" style='width: 100%;' name="answer" placeholder=""></textarea>
+
                                 </div>
+
+
+
+
+
+
                             </div>
+
                             <div class="col-md-2">
-                                <button type="submit" class="btn btn-block btn-info btn-flat" style="margin-left: 110%;">Enviar</button>
+                                <button type="submit" class="btn btn-block btn-info btn-flat" style='margin-left: 0%;'>Enviar</button>
                             </div>
 
                         </div>

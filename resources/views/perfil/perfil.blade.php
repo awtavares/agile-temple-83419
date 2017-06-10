@@ -54,7 +54,7 @@
 
 
                                     <br>
-                                <br>
+                                     <br>
                                     <div class="col-md-2">
 
                                         <button type="submit" class="btn btn-block btn-success btn-flat" >Atualizar dados</button>

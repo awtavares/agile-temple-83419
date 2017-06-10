@@ -56,7 +56,7 @@
 						
 
                             <div class="col-md-2">
-                                <button type="submit" class="btn btn-block btn-success btn-flat" style="margin-left: 110%;">
+                                <button type="submit" class="btn btn-block btn-success btn-flat" style="margin-left: 0%;">
 									Atualizar</button>
                             </div>
 

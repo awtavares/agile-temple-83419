@@ -83,7 +83,7 @@
                             @if(Auth::user()->roles == 2)
                                 @if($demand->status == 2)
                                         <div class="col-md-2">
-                                            {!! Form::submit('Responder', ['class' => 'btn btn-block btn-success btn-flat', 'style' => 'margin-left: 110%;']) !!}
+                                            {!! Form::submit('Responder', ['class' => 'btn btn-block btn-success btn-flat', 'style' => 'margin-left: 0%;']) !!}
                                         </div>
                                 @endif
                             @endif

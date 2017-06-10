@@ -47,14 +47,14 @@
                                 <label for="inputPassword3" class="col-sm-2 control-label">Descrição</label>
 
                                 <div class="col-sm-6">
-									<textarea cols="100" rows="10" style=" resize: none;" name="descricao" placeholder="Informe a descrição da oportunidade"></textarea>
+									<textarea cols="100" rows="10" style='width: 100%;' name="descricao" placeholder="Informe a descrição da oportunidade"></textarea>
                                 </div>
                             </div>
 
                             
 
                                 <div class="col-md-2">
-                                    <button type="submit" class="btn btn-block btn-success btn-flat" style="margin-left: 110%;">Enviar</button>
+                                    <button type="submit" class="btn btn-block btn-success btn-flat" style="margin-left: 0%;">Enviar</button>
                                 </div>
 
 

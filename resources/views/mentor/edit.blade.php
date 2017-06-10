@@ -35,7 +35,7 @@
                                     </div>
 
                                     <div class="col-md-2">
-                                        {!! Form::submit('Editar', ['class' => 'btn btn-block btn-success btn-flat', 'style' => 'margin-left: 110%;']) !!}
+                                        {!! Form::submit('Editar', ['class' => 'btn btn-block btn-success btn-flat', 'style' => 'margin-left: 0%;']) !!}
                                     </div>
                             </div>
                         {!! Form::close() !!}

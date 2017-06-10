@@ -24,12 +24,23 @@
         <div class="form-group">
             {!! Form::label('doubt', 'Dúvida', ['class' => 'col-sm-2 control-label']) !!}
             <div class="col-sm-6">
-                {{ Form::textarea('doubt', null, ['rows' => '10', 'cols' => '100', 'style' => 'reszie:none;']) }}
+                {{ Form::textarea('doubt', null, ['rows' => '10', 'cols' => '100', 'style' => 'width: 100%;']) }}
             </div>
+
+
+
+
+
+
         </div>
 
         <div class="col-md-2">
-            {!! Form::submit('Enviar', ['class' => 'btn btn-block btn-success btn-flat', 'style' => 'margin-left: 110%;']) !!}
+            {!! Form::submit('Enviar', ['class' => 'btn btn-block btn-success btn-flat', 'style' => 'margin-left: 0%;']) !!}
         </div>
+
+        </div>
+
+
+
 
     </div>

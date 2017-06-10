@@ -38,11 +38,13 @@ body {
 	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
 	font-size: 100%;
 
+
+
 }
 
 /******* Mentoring Login *******/
 .mt-login {
-    width: 30%;
+    width: 40%;
     padding: 2% 0;
     margin: 8% auto 0;
     background: #fff;
@@ -237,4 +239,4 @@ body {
     font-size: 15px;
 }
 
-/******* Media Queries Login *******/
+
