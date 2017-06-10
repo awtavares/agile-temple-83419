@@ -5,10 +5,7 @@
  * Date: 26/04/2017
  * Time: 11:42
  */
-
 namespace Mentor\Services;
-
-
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -18,15 +15,12 @@ use Mentor\Repositories\DemandRepositoryEloquent;
 use Mentor\Repositories\PerfomanceRepositoryEloquent;
 use Mentor\Repositories\UserRepositoryEloquent;
 use Mockery\Exception;
-
-
 class MentorService
 {
     /**
      * @var UserRepositoryEloquent
      */
     private $userRepositoryEloquent;
-
     /**
      * MentorService constructor.
      * @param UserRepositoryEloquent $userRepositoryEloquent
@@ -36,7 +30,6 @@ class MentorService
     {
         $this->userRepositoryEloquent = $userRepositoryEloquent;
     }
-
     public function getAllMentors()
     {
         try {
@@ -48,8 +41,6 @@ class MentorService
             $exception->getMessage();
         }
     }
-
-
     public function emailJaCadastrado($email)
     {
         try {
@@ -57,9 +48,7 @@ class MentorService
         } catch (QueryException $q) {
             $q->getMessage();
         }
-
     }
-
     public function createMentor(array $data)
     {
         try {
@@ -76,8 +65,8 @@ class MentorService
             }
             if($mentor):
                 // Criar um evento e jogar numa queue, se não vai dar lag
-                Mail::send('email.welcome', ['mentor' => $mentor], function ($message) use ($mentor) {
-                    $message->from('joaomarcusjesus@gmail.com', 'Sistema Mentoring');
+                Mail::send('email.welcome', ['mentor' => $mentor, 'senha' => $data['password']], function ($message) use ($mentor) {
+                    $message->from('joaomarcusjesus@gmail.com', 'Mentoring - Unipê 2017');
                     $message->to($mentor->email)->subject('Cadastro feito com sucesso!');
                 });
                 return $mentor;
@@ -86,7 +75,6 @@ class MentorService
             $exception->getMessage();
         }
     }
-
     protected function _filterRoleMentor()
     {
         return DB::table('users')

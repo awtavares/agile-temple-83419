@@ -1,12 +1,7 @@
-Caro Mentor
+<p>Caro, {{$mentor->name}} </p>
 
-Uma nova demanda foi direcionado para você no Mentoring.
+<p>    Uma nova demanda foi direcionado para você no Mentoring.</p>
 
-<table>
+<p>    {{$demanda->subject}}  </p>
 
-    <tr>
-        <td>{{$demanda->id}}</td>
-        <td>{{$demanda->student}}</td>
-    </tr>
-</table>
-Para responde-la, gentileza acessar o sistema Mentoring
+<p>        Para responde-la, gentileza acessar o sistema Mentoring.</p>
