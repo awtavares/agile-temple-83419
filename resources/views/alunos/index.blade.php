@@ -22,7 +22,7 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                            <th>#</th>
+
                             <th>Nome</th>
                             <th>E-mail</th>
                             <th>Ação</th>
@@ -32,7 +32,7 @@
                         @foreach($alunos as $aluno)
                         <tr>
 
-                            <td>{{ $aluno->id }}</td>
+
                             <td>{{ $aluno->name }}</td>
                             <td>{{ $aluno->email }}</td>
                             <td>
@@ -44,6 +44,12 @@
                         @endforeach
                         </tbody>
                     </table>
+                        @if(Auth::check())
+                            @if(Auth::user()->roles == 3)
+                                {{ $alunos->render() }}
+                            @endif
+                        @endif
+
                     @else
                     <h2 class="text-center"> Não há alunos cadastrados.</h2>
                     @endif

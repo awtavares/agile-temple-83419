@@ -32,6 +32,7 @@ class AlunosController extends Controller
     public function index()
     {
         $alunos = $this->userService->listarAlunos();
+
         return view('alunos.index', compact('alunos'));
     }
 
