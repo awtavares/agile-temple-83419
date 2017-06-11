@@ -29,9 +29,11 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>Cód.</th>
                                     <th>Assunto</th>
+                                    <th>Postado em:</th>
                                     <th>Status</th>
+                                    <th>Mudou o Status em:</th>
                                     <th>Ações</th>
                                 </tr>
                                 </thead>
@@ -40,6 +42,7 @@
                                     <tr>
                                         <td>{{ $demand->id }}</td>
                                         <td>{{ $demand->subject }}</td>
+                                        <td>{{ date('d/m/Y H:i:s', strtotime($demand->created_at)) }}</td>
                                         <td>
                                             @if($demand->status == 1)
                                                 <div class="label label-info">
@@ -55,6 +58,9 @@
                                                 </div>
                                             @endif
                                         </td>
+
+                                        <td>{{ date('d/m/Y H:i:s', strtotime($demand->updated_at)) }}</td>
+
                                         <td>
                                             <a href="{{ route('app.demand.show', ['id' => $demand->id])  }}"><button class="btn btn-success btn-sm">Visualizar</button></a>
 
