@@ -39,7 +39,7 @@ class MentorController extends Controller
     public function index()
     {
         /** CRIAR NO REPOSITORIES */
-        $mentors = User::where('roles', 2)->paginate(5);
+        $mentors = User::where('roles', 2)->paginate(10);
 
         return view('mentor.index', compact('mentors'));
     }
