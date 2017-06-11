@@ -51,7 +51,7 @@
                             </table>
                             <!-- Paginação apenas para administrador !! Atualização 04/05 by jm !!  -->
                             @if(Auth::check())
-                                @if(Auth::user()->roles == 10)
+                                @if(Auth::user()->roles == 3)
                                     {{ $mentors->render() }}
                                 @endif
                             @endif
