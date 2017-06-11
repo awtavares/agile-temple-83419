@@ -34,12 +34,7 @@
                     <div class="submit">
                         <input type="submit" value="RECUPERAR"/>
                     </div>
-                    <ul>
-                        <li><a href="https://www.facebook.com/unipeoficial" target="_blank"><span class="face"></span></a></li>
-                        <li><a href="https://twitter.com/unipeoficial" target="_blank"><span class="twit"></span></a></li>
-                        <li><a href="https://plus.google.com/110704726396562900035" target="_blank"><span class="goog"></span></a></li>
-                    </ul>
-            
+
                     <div class="clear"></div>
                 </div>
             </form>

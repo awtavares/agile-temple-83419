@@ -29,7 +29,6 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>Nome</th>
                                     <th>Email</th>
                                     <th>Ações</th>
@@ -38,7 +37,7 @@
                                 <tbody>
                                 @foreach($mentors as $mentor)
                                     <tr>
-                                        <td>{{ $mentor->id }}</td>
+
                                         <td>{{ $mentor->name }}</td>
                                         <td>{{ $mentor->email }}</td>
                                         <td>
@@ -52,7 +51,7 @@
                             </table>
                             <!-- Paginação apenas para administrador !! Atualização 04/05 by jm !!  -->
                             @if(Auth::check())
-                                @if(Auth::user()->roles == 3)
+                                @if(Auth::user()->roles == 10)
                                     {{ $mentors->render() }}
                                 @endif
                             @endif

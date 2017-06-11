@@ -37,9 +37,9 @@
 
                 <div class="mt-login-btn">
                     <div class="submit">
-                        <input type="submit" value="COMFIRMAR"/>
+                        <input type="submit" value="CONFIRMAR"/>
                     </div>
-                    
+
             
                     <div class="clear"></div>
                 </div>
