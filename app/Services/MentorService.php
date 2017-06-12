@@ -80,7 +80,7 @@ class MentorService
         return DB::table('users')
             ->select('*')
             ->where('roles', '=', 2)
-            ->orderBy('users.name', 'ASC')
+            ->orderBy('name', 'ASC')
             ->get();
     }
 }
