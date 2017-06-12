@@ -24,7 +24,7 @@
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Selecione o mentor:</label>
                                 <div class="col-sm-6">
-                                    {!! Form::select('mentor', $mentores, null, ['class' => 'form-control']) !!}
+                                    {!! Form::select('mentor', $mentores , null, ['class' => 'form-control']) !!}
                                 </div>
                             </div>
 
