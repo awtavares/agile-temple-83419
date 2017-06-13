@@ -82,7 +82,7 @@ class UserService
     public function listarAlunos()
     {
         try {
-            return DB::table('users')->where('roles','1')->paginate(10);
+            return DB::table('users')->where('roles','1')->orderBy('name','asc')->paginate(10);
         } catch (QueryException $q) {
             $q->getMessage();
         }
