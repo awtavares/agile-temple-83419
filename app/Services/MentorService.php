@@ -77,10 +77,6 @@ class MentorService
     }
     protected function _filterRoleMentor()
     {
-        return DB::table('users')
-            ->select('*')
-            ->where('roles', '=', 2)
-            ->orderBy('name', 'ASC')
-            ->get();
+        return DB::table('users')->where('roles', '2')->orderBy('name', 'asc')->get();
     }
 }
