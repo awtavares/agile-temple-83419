@@ -4,4 +4,4 @@
 
 <p>      </p>
 
-<p>     Para responde-la, acesse o <a href="http://agile-temple-83419.herokuapp.com">Sistema Mentoring.</a></p>
+<p>     Para responde-la, acesse o Sistema Mentoring.</p>
