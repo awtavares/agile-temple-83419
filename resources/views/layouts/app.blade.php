@@ -64,10 +64,10 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="{{ route('app.perfil.index') }}" class="btn btn-default btn-flat">Perfil</a>
+                                        <a href="{{ route('app.perfil.index') }}" class="btn btn-info btn-flat">Perfil</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="{{ route('login.logout') }}" class="btn btn-default btn-flat">Sair</a>
+                                        <a href="{{ route('login.logout') }}" class="btn btn-danger btn-flat">Sair</a>
                                     </div>
                                 </li>
 
