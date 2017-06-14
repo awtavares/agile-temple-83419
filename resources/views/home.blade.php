@@ -78,7 +78,7 @@
                                 <!-- small box -->
                                 <div class="small-box bg-aqua">
                                     <div class="inner">
-                                        <h3>{{ $demandas = DB::table('demands')->count() }}</h3>
+                                        <h3>{{$demandas}}</h3>
 
                                         <p>Demandas</p>
                                     </div>
