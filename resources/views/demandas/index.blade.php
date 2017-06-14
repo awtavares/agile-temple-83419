@@ -65,7 +65,7 @@
                                             <a href="{{ route('app.demand.show', ['id' => $demand->id])  }}"><button class="btn btn-success btn-sm">Visualizar</button></a>
 
                                             @if(Auth::check())
-                                                @if(Auth::user()->roles == 1 || Auth::user()->roles == 3 && $demand->status == 1)
+                                                @if(Auth::user()->roles == 1 && $demand->status == 1 || Auth::user()->roles == 3 && $demand->status == 1)
                                                     <a href="{{ route('app.demand.edit', ['id' => $demand->id])  }}"><button class="btn btn-warning btn-sm">Editar</button></a>
                                                 @endif
                                             @endif
