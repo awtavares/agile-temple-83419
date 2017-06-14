@@ -8,6 +8,7 @@ use Mentor\Models\User;
 use Mentor\Repositories\ActRepositoryEloquent;
 use Mentor\Repositories\PerfomanceRepositoryEloquent;
 use Mentor\Repositories\UserRepositoryEloquent;
+use Mentor\Services\DemandService;
 use Mentor\Services\MentorService;
 
 class MentorController extends Controller
@@ -22,6 +23,9 @@ class MentorController extends Controller
      */
     private $actRepositoryEloquent;
 
+
+    private $demandService;
+
     /**
      * MentorController constructor.
      * @param MentorService $mentorService
@@ -29,11 +33,14 @@ class MentorController extends Controller
      * @param ActRepositoryEloquent $actRepositoryEloquent
      */
     public function __construct(MentorService $mentorService,
-                                UserRepositoryEloquent $userRepositoryEloquent, ActRepositoryEloquent $actRepositoryEloquent)
+                                UserRepositoryEloquent $userRepositoryEloquent,
+                                ActRepositoryEloquent $actRepositoryEloquent,
+                                DemandService $demandService)
     {
         $this->mentorService = $mentorService;
         $this->userRepositoryEloquent = $userRepositoryEloquent;
         $this->actRepositoryEloquent = $actRepositoryEloquent;
+        $this->demandService = $demandService;
     }
 
     public function index()
@@ -86,9 +93,13 @@ class MentorController extends Controller
     {
         $act = $this->actRepositoryEloquent->findByField('user_id', $id);
 
-        // Colocar no serviço
+        $demandas = $this->demandService->getListDemandForUserId(id);
+       /* // Colocar no serviço
         foreach($act as $item):
             $this->actRepositoryEloquent->delete($item->id);
+        endforeach;*/
+        foreach($demandas as $demanda):
+            $this->demandService->declinar($demanda->id);
         endforeach;
 
         $this->userRepositoryEloquent->delete($id);

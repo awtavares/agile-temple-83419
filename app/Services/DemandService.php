@@ -110,6 +110,14 @@ class DemandService
             $exception->getMessage();
         }
     }
+    public function getListDemandForUserId($id){
+        try {
+            return $this->demandRepository->findByField('user_id', $id);
+        } catch(QueryException $exception) {
+            $exception->getMessage();
+        }
+    }
+
     private function getMyAuth()
     {
         return Auth::check();
