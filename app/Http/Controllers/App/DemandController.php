@@ -103,7 +103,7 @@ class DemandController extends Controller
     public function encaminharMe($id)
     {
         $demand = $this->demandRepository->find($id);
-        $mentores = $this->user->where('roles', 2)->pluck('name', 'id');
+        $mentores = $this->user->where('roles', 2)->orderBy('name', 'asc')->pluck('name', 'id');
         return view('demandas.encaminhar', compact('demand', 'mentores'));
     }
     public function storeMe(Request $request)

@@ -28,7 +28,7 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        {{--<th>#</th>--}}
                                         <th>Nome</th>
                                         <th>Local</th>
                                         <th>Remuneração</th>
@@ -39,7 +39,7 @@
                                         @foreach($oportunidades as $oportunidade)
                                             <tr>
 												
-                                                <td>{{ $oportunidade->id }}</td>
+{{--                                                <td>{{ $oportunidade->id }}</td>--}}
                                                 <td>{{ $oportunidade->nome }}</td>
                                                 <td>{{ $oportunidade->local }}</td>
                                                 <td>{{ $oportunidade->remuneracao }}</td>

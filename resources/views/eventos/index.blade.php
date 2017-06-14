@@ -22,7 +22,7 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        {{--<th>#</th>--}}
                                         <th>Nome do Evento</th>
                                         <th>Local</th>
                                         <th>Data do Evento</th>
@@ -33,7 +33,7 @@
                                 <tbody>
                                         @foreach($eventos as $evento)
                                             <tr>
-                                                <td>{{ $evento->id }}</td>
+{{--                                                <td>{{ $evento->id }}</td>--}}
                                                 <td>{{ $evento->nome }}</td>
                                                 <td>{{ $evento->local }}</td>
                                                 <!-- Não funciona -->
