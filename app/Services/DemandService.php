@@ -75,7 +75,7 @@ class DemandService
             $admins = DB::table('users')->where('roles', 3)->get();
             foreach ($admins as $admin){
                 Mail::send('email.createDemand', ['demanda' => $data, 'mediador'=>$admin], function ($message) use ($admin) {
-                    $message->from('joaomarcusjesus@gmail.com', 'Mentoring - Unipê 2017');
+                    $message->from('joaomarcusjesus@gmail.com', 'MENTORING - UNIPÊ');
                     $message->to($admin->email)->subject('Mentoring - Nova demanda cadastrada');
                 });
             }

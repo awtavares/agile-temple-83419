@@ -121,7 +121,7 @@ class DemandController extends Controller
         $selectMentor->qtd = $selectMentor->qtd + 1;
         $selectMentor->save();
         Mail::send('email.encaminhar', ['demanda' => $demandFind, 'mentor' => $selectMentor], function ($message) use ($selectMentor) {
-            $message->from('joaomarcusjesus@gmail.com', 'Mentoring - Unipê 2017');
+            $message->from('joaomarcusjesus@gmail.com', 'MENTORING - UNIPÊ');
             $message->to($selectMentor->email)->subject('Mentoring - Existe uma nova demanda para você');
         });
         return redirect()->route('app.demand.index');
@@ -140,7 +140,7 @@ class DemandController extends Controller
         $demand->status = 3;
         $demand->save();
         Mail::send('email.respostaDemanda', ['demanda' => $demand, 'aluno' => $aluno], function ($message) use ($aluno) {
-            $message->from('joaomarcusjesus@gmail.com', 'Mentoring - Unipê 2017');
+            $message->from('joaomarcusjesus@gmail.com', 'MENTORING - UNIPÊ');
             $message->to($aluno->email)->subject('Mentoring - Sua dúvida foi respondida');
         });
         return redirect()->route('app.demand.index');
