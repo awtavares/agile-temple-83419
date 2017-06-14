@@ -29,7 +29,7 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>Cód.</th>
+                                    {{--<th>Cód.</th>--}}
                                     <th>Assunto</th>
                                     <th>Postado em:</th>
                                     <th>Status</th>
@@ -40,7 +40,7 @@
                                 <tbody>
                                 @foreach($demands as $demand)
                                     <tr>
-                                        <td>{{ $demand->id }}</td>
+{{--                                        <td>{{ $demand->id }}</td>--}}
                                         <td>{{ $demand->subject }}</td>
                                         <td>{{ date('d/m/Y H:i:s', strtotime($demand->created_at)) }}</td>
                                         <td>

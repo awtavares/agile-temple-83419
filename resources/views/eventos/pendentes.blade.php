@@ -22,7 +22,7 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
+                                    {{--<th>#</th>--}}
                                     <th>Nome do Evento</th>
                                     <th>Local</th>
                                     <th>Data do Evento</th>
@@ -34,7 +34,7 @@
                                 @foreach($eventos as $evento)
                                     <tr>
 
-                                        <td>{{ $evento->id }}</td>
+                                        {{--<td>{{ $evento->id }}</td>--}}
                                         <td>{{ $evento->nome }}</td>
                                         <td>{{ $evento->local }}</td>
                                         <td>{{ date('d/m/Y', strtotime($evento->data_do_evento)) }}</td>
