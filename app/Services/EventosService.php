@@ -72,6 +72,14 @@ class EventosService
         }
     }
 
+    public function findByUser($id){
+        try{
+            return $this->eventosRepository->findByField('user_id',$id);
+        }catch(Exception $exception) {
+            $exception->getMessage();
+        }
+    }
+
     public function atualizarEvento(array $data)
     {
         try {
@@ -93,6 +101,15 @@ class EventosService
     {
         try{
             $this->eventosRepository->delete($data['evento_id']);
+        }catch(Exception $exception) {
+            $exception->getMessage();
+        }
+    }
+
+    public function deletarEventoById($idEvento)
+    {
+        try{
+            $this->eventosRepository->delete($idEvento);
         }catch(Exception $exception) {
             $exception->getMessage();
         }

@@ -61,6 +61,15 @@ class OportunidadesService
         }
     }
 
+    public function findByUser($id)
+    {
+        try{
+            return $this->oportunidadesRepository->findByField('user_id',$id);
+        }catch(Exception $exception) {
+            $exception->getMessage();
+        }
+    }
+
     public function atualizarOportunidade(array $data){
         try {
             $this->oportunidadesRepository->update([
@@ -79,6 +88,15 @@ class OportunidadesService
     {
         try{
             $this->oportunidadesRepository->delete($data['oportunidade_id']);
+        }catch(Exception $exception) {
+            $exception->getMessage();
+        }
+    }
+
+    public function deletarOportunidadeById($idEvento)
+    {
+        try{
+            $this->oportunidadesRepository->delete($idEvento);
         }catch(Exception $exception) {
             $exception->getMessage();
         }

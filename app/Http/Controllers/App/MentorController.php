@@ -9,7 +9,9 @@ use Mentor\Repositories\ActRepositoryEloquent;
 use Mentor\Repositories\PerfomanceRepositoryEloquent;
 use Mentor\Repositories\UserRepositoryEloquent;
 use Mentor\Services\DemandService;
+use Mentor\Services\EventosService;
 use Mentor\Services\MentorService;
+use Mentor\Services\OportunidadesService;
 
 class MentorController extends Controller
 {
@@ -22,9 +24,14 @@ class MentorController extends Controller
      * @var ActRepositoryEloquent
      */
     private $actRepositoryEloquent;
-
-
+    /**
+     * @var ActRepositoryEloquent
+     */
     private $demandService;
+
+    private $eventosService;
+
+    private $oportunidadesService;
 
     /**
      * MentorController constructor.
@@ -35,12 +42,16 @@ class MentorController extends Controller
     public function __construct(MentorService $mentorService,
                                 UserRepositoryEloquent $userRepositoryEloquent,
                                 ActRepositoryEloquent $actRepositoryEloquent,
-                                DemandService $demandService)
+                                DemandService $demandService,
+                                EventosService $eventosService,
+                                OportunidadesService $oportunidadesService)
     {
         $this->mentorService = $mentorService;
         $this->userRepositoryEloquent = $userRepositoryEloquent;
         $this->actRepositoryEloquent = $actRepositoryEloquent;
         $this->demandService = $demandService;
+        $this->eventosService = $eventosService;
+        $this->oportunidadesService = $oportunidadesService;
     }
 
     public function index()
@@ -92,14 +103,24 @@ class MentorController extends Controller
     public function delete($id)
     {
         $act = $this->actRepositoryEloquent->findByField('user_id', $id);
-
-        $demandas = $this->demandService->getListDemandForUserId(id);
-       /* // Colocar no serviço
+        // Colocar no serviço
         foreach($act as $item):
             $this->actRepositoryEloquent->delete($item->id);
-        endforeach;*/
+        endforeach;
+
+        $demandas = $this->demandService->getListDemandForUserId($id);
         foreach($demandas as $demanda):
             $this->demandService->declinar($demanda->id);
+        endforeach;
+
+        $eventos = $this->eventosService->findByUser($id);
+        foreach($eventos as $evento):
+            $this->eventosService->deletarEventoById($evento->id);
+        endforeach;
+
+        $oportunidades = $this->oportunidadesService->findByUser($id);
+        foreach($oportunidades as $oportunidade):
+            $this->oportunidadesService->deletarOportunidadeById($oportunidade->id);
         endforeach;
 
         $this->userRepositoryEloquent->delete($id);
