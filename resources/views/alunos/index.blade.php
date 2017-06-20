@@ -33,7 +33,7 @@
 
 
                             <td>{{ $aluno->name }}</td>
-                            
+
                             <td>
                                 <a href="{{ route('app.alunos.show', $aluno->id)  }}">
                                     <button class="btn btn-success btn-sm">Visualizar</button>

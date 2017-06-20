@@ -9,6 +9,10 @@
         </h1>
     </section>
 
+    <section class="content-header">
+        <a href="{{ route('app.demand.index') }}" class="btn btn-info">Voltar</a>
+    </section>
+
     <section class="content">
         <div class="row">
             <div class="col-md-12">

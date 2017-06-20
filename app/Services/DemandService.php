@@ -53,7 +53,7 @@ class DemandService
                 // endif;
                 else:
                     /** Fluxo atualizado 04/05/2017 by jm **/
-                    //FIXME USAR PAGINAÇÃO POR USER? -- ?
+                    //FIXME - USAR PAGINAÇÃO POR STATUS?
                     $demand = $this->demandRepository->orderBy('status', 'ASC')->paginate(10);
                 endif;
                 return $demand;
