@@ -24,7 +24,6 @@
                         <tr>
 
                             <th>Nome</th>
-                            <th>E-mail</th>
                             <th>Ação</th>
                         </tr>
                         </thead>
@@ -34,7 +33,7 @@
 
 
                             <td>{{ $aluno->name }}</td>
-                            <td>{{ $aluno->email }}</td>
+                            
                             <td>
                                 <a href="{{ route('app.alunos.show', $aluno->id)  }}">
                                     <button class="btn btn-success btn-sm">Visualizar</button>
