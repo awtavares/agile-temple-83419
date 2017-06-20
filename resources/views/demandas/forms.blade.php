@@ -27,12 +27,15 @@
                 {{ Form::textarea('doubt', null, ['rows' => '10', 'cols' => '100', 'style' => 'width: 100%;']) }}
             </div>
 
-
-
-
-
-
         </div>
+
+        <div class="form-group">
+            {!! Form::label('', '', ['class' => 'col-sm-2 control-label']) !!}
+        <div class="col-sm-6">
+            {{ Form::file('file') }}
+        </div>
+        </div>
+
 
         <div class="col-md-2">
             {!! Form::submit('Enviar', ['class' => 'btn btn-block btn-success btn-flat', 'style' => 'margin-left: 0%;']) !!}
