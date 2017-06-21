@@ -38,7 +38,7 @@
                             </div>
 
                             <div class="col-md-2">
-                                <button type="submit" class="btn btn-block btn-info btn-flat" style='margin-left: 0%;'>Enviar</button>
+                                <button type="submit" class="btn btn-block btn-info btn-flat" style='margin-left: 0%;'>Salvar</button>
                             </div>
 
                         </div>
