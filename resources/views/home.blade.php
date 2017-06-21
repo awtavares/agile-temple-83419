@@ -109,7 +109,7 @@
                                 <!-- small box -->
                                 <div class="small-box bg-red">
                                     <div class="inner">
-                                        <h3>{{ $eventos = DB::table('eventos')->count() }}</h3>
+                                        <h3>{{ $eventos = DB::table('eventos')->where('status','aprovado')->count() }}</h3>
 
                                         <p>Eventos</p>
                                     </div>
