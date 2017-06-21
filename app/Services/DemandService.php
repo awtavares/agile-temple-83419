@@ -47,14 +47,14 @@ class DemandService
             try {
                 //Pego as demandas usando o _id do cara logado
                 if(Auth::user()->roles == 1):
-                    $demand = $this->demandRepository->findByField('user_id', $Who->id);
+                    $demand = $this->demandRepository->orderBy('status', 'ASC')->orderBy('created_at', 'DESC')->findByField('user_id', $Who->id);
                 elseif(Auth::user()->roles == 2):
-                    $demand = $this->demandRepository->findByField('mentor', $Who->id);
+                    $demand = $this->demandRepository->orderBy('status', 'ASC')->orderBy('created_at', 'DESC')->findByField('mentor', $Who->id);
                 // endif;
                 else:
                     /** Fluxo atualizado 04/05/2017 by jm **/
                     //FIXME - USAR PAGINAÇÃO POR STATUS?
-                    $demand = $this->demandRepository->orderBy('status', 'ASC')->paginate(10);
+                    $demand = $this->demandRepository->orderBy('status', 'ASC')->orderBy('created_at', 'DESC')->paginate(10);
                 endif;
                 return $demand;
             } catch (QueryException $q) {
@@ -90,8 +90,7 @@ class DemandService
                 'title' => $data['title'],
                 'subject' => $data['subject'],
                 'doubt' => $data['doubt'],
-                'email' => $data['email'],
-                'user_id' => $this->getMyUserById()
+                'email' => $data['email']
             ], $id);
         } catch (QueryException $exception) {
             $exception->getMessage();
@@ -106,6 +105,15 @@ class DemandService
             $demanda->mentor = null;
             $demanda->status = 1;
             $demanda->save();
+
+
+            $admins = DB::table('users')->where('roles', 3)->get();
+            foreach ($admins as $admin){
+                Mail::send('email.declinarDemand', ['demanda' => $demanda, 'mentor' => $mentor], function ($message) use ($admin) {
+                    $message->from('joaomarcusjesus@gmail.com', 'MENTORING - UNIPÊ');
+                    $message->to($admin->email)->subject('Mentoring - Existe uma nova demanda para você');
+                });
+            }
         } catch(QueryException $exception) {
             $exception->getMessage();
         }

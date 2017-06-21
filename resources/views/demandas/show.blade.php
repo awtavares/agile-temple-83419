@@ -30,9 +30,15 @@
                         {!! Form::hidden('demand_id', $demand->id) !!}
 
                             <div class="form-group">
-                                {!! Form::label('email', 'E-mail', ['class' => 'col-sm-2 control-label']) !!}
                                 <div class="col-sm-6">
-                                    {!! Form::text('email', $demand->email, ['class' => 'form-control', 'name' => 'email', 'disabled' => 'disabled']) !!}
+                                    {!! Form::hidden('email', $demand->email, ['class' => 'form-control', 'name' => 'email', 'disabled' => 'disabled']) !!}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                {!! Form::label('aluno', 'Aluno', ['class' => 'col-sm-2 control-label']) !!}
+                                <div class="col-sm-6">
+                                    {!! Form::text('aluno', $demand->user->name, ['class' => 'form-control', 'name' => 'email', 'disabled' => 'disabled']) !!}
                                 </div>
                             </div>
 
