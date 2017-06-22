@@ -15,6 +15,7 @@ use Mentor\Repositories\EventosRepositoryEloquent;
 use Mentor\Repositories\UserRepositoryEloquent;
 use Mockery\Exception;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Mail;
 
 class EventosService
 {
@@ -38,6 +39,15 @@ class EventosService
         }
     }
 
+    public function listarEventosSemPaginate()
+    {
+        try {
+            return DB::table('eventos')->where('status','aprovado')->orderBy('data_do_evento', 'desc')->get();
+        } catch (QueryException $q) {
+            $q->getMessage();
+        }
+    }
+
     public function eventosPendentes()
     {
         try {
@@ -55,7 +65,7 @@ class EventosService
                 'local' => $data['local'],
                 'data_do_evento' => $data['data_do_evento'],
                 'telefone' => $data['telefone'],
-                'status' => Auth::user()->roles == 3 ? 'aprovado' : 'pendente',
+                'status' => Auth::user()->roles > 1 ? 'aprovado' : 'pendente',
                 'user_id' => Auth::user()->id
             ]);
 
@@ -137,6 +147,29 @@ class EventosService
         } catch(Exception $exception) {
             $exception->getMessage();
         }
+    }
+
+    public function enviarEmail(array $data)
+    {
+        $eventos = array();
+        try{
+            foreach ($data as  $idEvento){
+                $evento = $this->eventosRepository->find($idEvento);
+                array_push($eventos, $evento);
+            }
+            $alunos = DB::table('users')->where('roles','1')->orderBy('id', 'asc')->get();
+            foreach ($alunos as  $aluno){
+
+                Mail::send('email.notificacaoEvento', ['eventos' => $eventos, 'aluno' => $aluno], function ($message) use ($aluno) {
+                    $message->from('joaomarcusjesus@gmail.com', 'MENTORING - UNIPÊ');
+                    $message->to($aluno->email)->subject('Mentoring - Novos Eventos');
+                });
+
+            }
+        }catch(Exception $exception) {
+            $exception->getMessage();
+        }
+
     }
 
 

@@ -38,10 +38,17 @@ class EventosController extends Controller
         $eventos = $this->eventosService->listarEventos();
 //        $eventos = $this->repositoryEloquent->paginate(5);
 
-		return view('eventos.index', compact('eventos'));
-	}
+        return view('eventos.index', compact('eventos'));
+    }
 
-	public function pendentes()
+    public function preparativoEmail()
+    {
+        $eventos = $this->eventosService->listarEventosSemPaginate();
+
+        return view('eventos.preparativoEmail', compact('eventos'));
+    }
+
+    public function pendentes()
     {
         // seguir p padrão das {}
 	    $eventos = $this->eventosService->eventosPendentes();
@@ -65,6 +72,17 @@ class EventosController extends Controller
     {
         $this->eventosService->criarEvento($request->all());
 
+        return redirect()->route('app.eventos.index');
+    }
+
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function enviarEmail(Request $request)
+    {
+        $this->eventosService->enviarEmail($request->all());
         return redirect()->route('app.eventos.index');
     }
 

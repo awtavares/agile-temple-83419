@@ -87,11 +87,12 @@ class DemandController extends Controller
     public function show($id)
     {
         $demand = $this->demandRepository->find($id);
+        $aluno = $this->userRepository->find($demand->user_id);
         /** COLOCAR NO SERVICE */
         if($demand->mentor):
             $mentor = $this->userRepository->find($demand->mentor);
         endif;
-        return view('demandas.show', compact('demand', 'mentor'));
+        return view('demandas.show', compact('demand', 'mentor','aluno'));
     }
     public function destroy($id)
     {
