@@ -15,10 +15,15 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Listagem de eventos</h3>
-                        <a href="{{ route('app.eventos.preparativoEmail') }}"
-                           class="btn btn-info pull-right"
-                           style=" margin-left: 5px; "> Enviar E-mail Informativo
-                        </a>
+                        @if(Auth::check())
+                            @if(Auth::user()->roles == 3)
+                                <a href="{{ route('app.eventos.preparativoEmail') }}"
+                                   class="btn btn-info pull-right"
+                                   style=" margin-left: 5px; "> Enviar E-mail Informativo
+                                </a>
+                            @endif
+                        @endif
+
                         <a href="{{ route('app.eventos.create') }}"
                            class="btn btn-success pull-right"
                            style=" margin-right: 5px;"> Cadastrar Evento

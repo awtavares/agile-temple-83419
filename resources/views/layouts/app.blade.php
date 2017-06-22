@@ -156,7 +156,7 @@
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 2.3.8
+            <b>Version</b> 2.3.8.0
         </div>
         <strong><a href="#">Fábrica de Software - UBTECH OFFICE 2017</a>.</strong>
     </footer>

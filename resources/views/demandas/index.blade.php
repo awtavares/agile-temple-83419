@@ -85,6 +85,7 @@
                                                     <a href="{{ route('app.demand.destroy', ['id' => $demand->id])  }}"><button class="btn btn-danger btn-sm">Excluir</button></a>
                                                 @endif
                                             @endif
+
                                             @if(Auth::check())
                                                 @if(Auth::user()->roles == 2 && $demand->status == 2)
                                                     <a href="{{ route('app.demand.declinar', $demand->id)  }}"><button class="btn btn-danger btn-sm">Declinar</button></a>
