@@ -68,12 +68,14 @@ Route::group(['prefix' => 'app', 'as' => 'app.', 'namespace' => 'App', 'middlewa
 //	    Inicio rotas crud eventos
         Route::get('/', ['as' => 'index', 'uses' => 'EventosController@index']);
         Route::get('/create', ['as' => 'create', 'uses' => 'EventosController@create']);
-        Route::post('/store', ['as' => 'store', 'uses' => 'EventosController@store']);
-
         Route::get('/edit/{id}', ['as' => 'edit', 'uses' => 'EventosController@edit']);
         Route::get('/show/{id}', ['as' => 'show', 'uses' => 'EventosController@show']);
-        Route::post('/update', ['as' => 'update', 'uses' => 'EventosController@update']);
         Route::get('/delete/{id}', ['as' => 'delete', 'uses' => 'EventosController@delete']);
+        Route::get('/preparativoEmail', ['as' => 'preparativoEmail', 'uses' => 'EventosController@preparativoEmail']);
+
+        Route::post('/update', ['as' => 'update', 'uses' => 'EventosController@update']);
+        Route::post('/store', ['as' => 'store', 'uses' => 'EventosController@store']);
+        Route::post('/enviarEmail', ['as' => 'enviarEmail', 'uses' => 'EventosController@enviarEmail']);
 //      Fim rotas crud eventos
 
 //      Inicio rotas eventos pendentes

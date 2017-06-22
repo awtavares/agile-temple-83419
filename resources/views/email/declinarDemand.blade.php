@@ -1,7 +1,7 @@
 <p> Olá, Mediador! </p>
 </br>
 <p> A demanda com assunto "{{$demanda->subject}}"</p>
-<p> criada pelo aluno {{$demanda->user->name}} </p>
+<p> criada pelo aluno {{$aluno->name}} </p>
 <p> que você encaminhou para o mentor {{$mentor->name}} </p>
 <p> foi declinada por ele.</p>
 

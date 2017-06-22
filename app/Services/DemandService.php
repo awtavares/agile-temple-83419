@@ -100,18 +100,19 @@ class DemandService
         try {
             $demanda =  $this->demandRepository->find($id);
             $mentor = $this->userRepository->find($demanda->mentor);
+            $aluno = $this->userRepository->find($demanda->user_id);
             $mentor->qtd = $mentor->qtd - 1;
             $mentor->save();
             $demanda->mentor = null;
-            $demanda->status = 1;
+            $demanda->status = 0;
             $demanda->save();
 
 
             $admins = DB::table('users')->where('roles', 3)->get();
             foreach ($admins as $admin){
-                Mail::send('email.declinarDemand', ['demanda' => $demanda, 'mentor' => $mentor], function ($message) use ($admin) {
+                Mail::send('email.declinarDemand', ['demanda' => $demanda, 'mentor' => $mentor, 'aluno' => $aluno], function ($message) use ($admin) {
                     $message->from('joaomarcusjesus@gmail.com', 'MENTORING - UNIPÊ');
-                    $message->to($admin->email)->subject('Mentoring - Existe uma nova demanda para você');
+                    $message->to($admin->email)->subject('Mentoring - Demanda recusada');
                 });
             }
         } catch(QueryException $exception) {
