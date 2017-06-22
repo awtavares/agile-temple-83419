@@ -94,6 +94,7 @@
                                                     </a>
                                                 @endif
                                             @endif
+
                                             @if(Auth::check())
                                                 @if(Auth::user()->roles == 2 && $demand->status == 2)
                                                     <a href="{{ route('app.demand.declinar', $demand->id)  }}">
