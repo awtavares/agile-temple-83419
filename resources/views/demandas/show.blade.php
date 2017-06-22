@@ -33,12 +33,12 @@
                                 <div class="col-sm-6">
                                     {!! Form::hidden('email', $demand->email, ['class' => 'form-control', 'name' => 'email', 'disabled' => 'disabled']) !!}
                                 </div>
-                            </div>
+                                    </div>
 
-                            <div class="form-group">
-                                {!! Form::label('aluno', 'Aluno', ['class' => 'col-sm-2 control-label']) !!}
-                                <div class="col-sm-6">
-                                    {!! Form::text('aluno', $demand->user->name, ['class' => 'form-control', 'name' => 'email', 'disabled' => 'disabled']) !!}
+                                                    <div class="form-group">
+                                                            {!! Form::label('aluno', 'Aluno', ['class' => 'col-sm-2 control-label']) !!}
+                                                            <div class="col-sm-6">
+                                                                {!! Form::text('aluno', $aluno->name, ['class' => 'form-control', 'name' => 'email', 'disabled' => 'disabled']) !!}
                                 </div>
                             </div>
 
