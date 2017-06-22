@@ -21,8 +21,8 @@
         @endif
         <div class="mt-login-content">
 
-            @if($user)
-                @foreach($user as $item)
+            @if($usuario)
+                @foreach($usuario as $item)
                     {!! Form::open(['method' => 'POST', 'route' => ['login.newPasswordReset', 'id'=> $item->id]]) !!}
 
                     {{ csrf_field() }}

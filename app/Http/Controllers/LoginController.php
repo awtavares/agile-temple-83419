@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Mentor\Models\User;
 use Mentor\Repositories\UserRepositoryEloquent;
+use Illuminate\Support\Facades\Mail;
 
 class LoginController extends Controller
 {
@@ -54,19 +55,24 @@ class LoginController extends Controller
         return view('auth.passwords.email');
     }
 
-    public function resetPassword()
+    public function resetPassword($id)
     {
-        return view('auth.passwords.resetPassword');
+        $usuario = $this->eloquent->find($id);
+        return view('auth.passwords.resetPassword', compact('usuario'));
     }
 
     public function newPassword(Request $request)
     {
         $user = $this->eloquent->where('email', $request['email'])->get();
         if($user):
-            return view('auth.passwords.resetPassword', compact('user'));
+            Mail::send('email.resetPassword', ['usuario' => $user[0] ], function ($message) use ($request) {
+                $message->from('joaomarcusjesus@gmail.com', 'MENTORING - UNIPÊ');
+                $message->to($request['email'])->subject('Mentoring - Nova senha');
+            });
+            return redirect()->route('login.index');
         else:
             $request->session()->flash('error', 'E-mail não existe');
-            return redirect()->back();
+            return redirect()->route('auth.passwords.resetPassword');
         endif;
     }
 
