@@ -49,7 +49,7 @@
                                                 <div class="label label-danger">
                                                     {{ "Declinada" }}
                                                 </div>
-                                                @if($demand->status == 1)
+                                                @elseif($demand->status == 1)
                                                     <div class="label label-info">
                                                         {{ "Em espera" }}
                                                     </div>
