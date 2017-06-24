@@ -40,7 +40,6 @@
                 <div class="clear"></div>
             </div>
             {!! Form::close() !!}
-            @endif
 
         </div>
     </div>
