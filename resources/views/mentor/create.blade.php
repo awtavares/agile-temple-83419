@@ -23,6 +23,19 @@
                             {{  Session::get('error') }}
                         </div>
                     @endif
+
+                    @if (isset($errors) && count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+
+
                     {!! Form::open(['class' => 'form-horizontal', 'method' => 'POST', 'name' => 'form', 'route' => 'app.mentor.store']) !!}
                     @include('mentor.forms')
                     {!! Form::close() !!}

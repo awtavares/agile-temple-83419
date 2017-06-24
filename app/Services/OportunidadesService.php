@@ -101,4 +101,14 @@ class OportunidadesService
             $exception->getMessage();
         }
     }
+
+    public $rules = [
+
+        'nome' => 'required',
+        'remuneracao' => 'required',
+        'descricao' => 'required',
+        'local' => 'required',
+
+    ];
+
 }

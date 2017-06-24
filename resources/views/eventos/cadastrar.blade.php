@@ -50,14 +50,14 @@
                                 <label for="inputPassword3" class="col-sm-2 control-label">Local</label>
 
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Local do evento" name="local">
+                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Local do evento" name="local" value="{{old('local')}}">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Data do evento</label>
                                 <div class="col-sm-6">
-									<input type="date" class="form-control" id="inputDate3" placeholder="Data do evento" name="data_do_evento">
+									<input type="date" class="form-control" id="inputDate3" placeholder="Data do evento" name="data_do_evento" value="{{old('data_do_evento')}}">
                                 </div>
                             </div>
 
@@ -65,7 +65,7 @@
                                 <label for="inputPassword3" class="col-sm-2 control-label">Telefone</label>
 
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Telefone" name="telefone">
+                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Telefone" name="telefone" value="{{old('telefone')}}">
                                 </div>
                             </div>
 

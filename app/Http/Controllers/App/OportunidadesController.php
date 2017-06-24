@@ -36,6 +36,18 @@ class OportunidadesController extends Controller
 
     public function store(Request $request)
     {
+
+        $messages = [
+            'nome.required' => 'O campo :attribute está vazio.',
+            'remuneracao.required' => 'O campo remuneração está vazio.',
+            'descricao.required' => 'O campo descrição está vazio.',
+            'local.required' => 'O campo :attribute está vazio.',
+        ];
+
+        $this->validate($request, $this->oportunidadesService->rules, $messages);
+
+
+
         // faz sentido, qualquer persistência é sempre uma boa jogar pro service tratar, boa!
         $this->oportunidadesService->criarOportunidade($request->all());
 

@@ -79,4 +79,17 @@ class MentorService
     {
         return DB::table('users')->where('roles', '2')->orderBy('name', 'asc')->get();
     }
+
+
+    public $rules = [
+
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+        'password_confirm' => 'required',
+
+    ];
+
+
+
 }

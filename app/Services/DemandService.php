@@ -179,4 +179,16 @@ class DemandService
             return $myItems->id;
         }
     }
+
+    public $rules = [
+
+        'title' => 'required',
+        'subject' => 'required',
+        'doubt' => 'required',
+
+
+    ];
+
+
+
 }

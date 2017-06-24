@@ -69,6 +69,18 @@ class MentorController extends Controller
 
     public function store(Request $request)
     {
+
+        $messages = [
+            'name.required' => 'O campo nome está vazio.',
+            'email.required' => 'O campo e-mail está vazio.',
+            'password.required' => 'O campo senha está vazio.',
+            'password_confirm.required' => 'O campo confirme sua senha está vazio.',
+        ];
+
+        $this->validate($request, $this->mentorService->rules, $messages);
+
+
+
         $mentor = $this->mentorService->createMentor($request->all());
         if($mentor) {
             return redirect()->route('app.mentor.index');

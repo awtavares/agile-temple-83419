@@ -70,6 +70,18 @@ class DemandController extends Controller
     }
     public function store(Request $request)
     {
+
+        $messages = [
+            'title.required' => 'O campo título está vazio.',
+            'subject.required' => 'O campo assunto está vazio.',
+            'doubt.required' => 'O campo dúvida está vazio.',
+
+        ];
+
+        $this->validate($request, $this->demandService->rules, $messages);
+
+
+
         $this->demandService->myDemandsCreate($request->all());
         return redirect()->route('app.demand.index');
     }
