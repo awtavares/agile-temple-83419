@@ -21,28 +21,25 @@
         @endif
         <div class="mt-login-content">
 
-            @if($usuario)
-                @foreach($usuario as $item)
-                    {!! Form::open(['method' => 'POST', 'route' => ['login.newPasswordReset', 'id'=> $item->id]]) !!}
+            {!! Form::open(['method' => 'POST', 'route' => ['login.newPasswordReset', 'id'=> $usuario->id]]) !!}
 
-                    {{ csrf_field() }}
-                <div class="form-email{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <input id="senha" name="password" type="password" class="email" placeholder="Digite sua nova senha" />
-                    <input id="rSenha" name="rPassword" type="password" class="email" placeholder="Repita a seha informada" />
-                    @if ($errors->has('email'))
-                        <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
-                    @endif
+            {{ csrf_field() }}
+            <div class="form-email{{ $errors->has('email') ? ' has-error' : '' }}">
+                <input id="senha" name="password" type="password" class="email" placeholder="Digite sua nova senha" />
+                <input id="rSenha" name="rPassword" type="password" class="email" placeholder="Repita a seha informada" />
+                @if ($errors->has('email'))
+                    <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
+                @endif
+            </div>
+
+            <div class="mt-login-btn">
+                <div class="submit">
+                    <input type="submit" value="ALTERAR SENHA"/>
                 </div>
 
-                <div class="mt-login-btn">
-                    <div class="submit">
-                        <input type="submit" value="ALTERAR SENHA"/>
-                    </div>
-
-                    <div class="clear"></div>
-                </div>
+                <div class="clear"></div>
+            </div>
             {!! Form::close() !!}
-                   @endforeach
             @endif
 
         </div>

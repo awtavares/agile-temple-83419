@@ -64,7 +64,7 @@ class LoginController extends Controller
     public function newPassword(Request $request)
     {
         $user = $this->eloquent->where('email', $request['email'])->get();
-        if($user):
+        if(sizeof($user) != 0):
             Mail::send('email.resetPassword', ['usuario' => $user[0] ], function ($message) use ($request) {
                 $message->from('joaomarcusjesus@gmail.com', 'MENTORING - UNIPÊ');
                 $message->to($request['email'])->subject('Mentoring - Nova senha');
@@ -72,7 +72,7 @@ class LoginController extends Controller
             return redirect()->route('login.index');
         else:
             $request->session()->flash('error', 'E-mail não existe');
-            return redirect()->route('auth.passwords.resetPassword');
+            return redirect()->route('login.reset');
         endif;
     }
 
