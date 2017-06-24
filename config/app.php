@@ -122,6 +122,7 @@ return [
     |
     */
 
+
     'providers' => [
 
         /*
@@ -160,6 +161,7 @@ return [
         Mentor\Providers\AuthServiceProvider::class,
         Mentor\Providers\EventServiceProvider::class,
         Mentor\Providers\RouteServiceProvider::class,
+
 
     ],
 
@@ -211,5 +213,6 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
     ],
+
 
 ];

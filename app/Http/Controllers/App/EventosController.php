@@ -25,6 +25,7 @@ class EventosController extends Controller
      */
     public function __construct(EventosService $eventosService, EventosRepositoryEloquent $repositoryEloquent)
     {
+
         $this->eventosService = $eventosService;
         $this->repositoryEloquent = $repositoryEloquent;
     }
@@ -70,6 +71,21 @@ class EventosController extends Controller
      */
     public function store(Request $request)
     {
+
+
+
+
+        $messages = [
+            'nome.required' => 'O campo :attribute está vazio.',
+            'data_do_evento.required' => 'O campo :attribute está vazio.',
+            'local.required' => 'O campo :attribute está vazio.',
+            'telefone.required' => 'O campo :attribute está vazio.',
+        ];
+
+        $this->validate($request, $this->eventosService->rules, $messages);
+
+
+
         $this->eventosService->criarEvento($request->all());
 
         return redirect()->route('app.eventos.index');

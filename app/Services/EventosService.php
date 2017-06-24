@@ -173,4 +173,16 @@ class EventosService
     }
 
 
+
+    public $rules = [
+
+        'nome' => 'required',
+        'data_do_evento' => 'required',
+        'local' => 'required',
+        'telefone' => 'required',
+
+    ];
+
+
+
 }
