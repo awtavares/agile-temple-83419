@@ -41,9 +41,9 @@
                                         <td>{{ $mentor->name }}</td>
                                         <td>{{ $mentor->email }}</td>
                                         <td>
-                                            <a href="{{ route('app.mentor.show', ['id' => $mentor->id])  }}"><button class="btn btn-success btn-sm">Visualizar</button></a>
-                                            <a href="{{ route('app.mentor.edit', ['id' => $mentor->id])  }}"><button class="btn btn-warning btn-sm">Editar</button></a>
-                                            <a href="{{ route('app.mentor.delete', ['id' => $mentor->id])  }}"><button class="btn btn-danger btn-sm">Excluir</button></a>
+                                            <a href="{{ route('app.mentor.show', ['id' => $mentor->id])  }}"><button class="btn btn-success btn-sm"> <i class='glyphicon glyphicon-eye-open'> </i> Visualizar</button></a>
+                                            <a href="{{ route('app.mentor.edit', ['id' => $mentor->id])  }}"><button class="btn btn-warning btn-sm"> <i class='glyphicon glyphicon-edit'> </i> Editar</button></a>
+                                            <a href="{{ route('app.mentor.delete', ['id' => $mentor->id])  }}"><button class="btn btn-danger btn-sm"> <i class='glyphicon glyphicon-trash'> </i> Excluir</button></a>
                                         </td>
                                     </tr>
                                 @endforeach

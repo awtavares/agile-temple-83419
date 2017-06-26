@@ -54,14 +54,14 @@
                                                 <td>{{ $evento->telefone }}</td>
 
                                                 <td>
-                                                   <a href="{{ route('app.eventos.show', $evento->id)  }}"><button class="btn btn-success btn-sm">Visualizar</button></a>
+                                                   <a href="{{ route('app.eventos.show', $evento->id)  }}"><button class="btn btn-success btn-sm"> <i class='glyphicon glyphicon-eye-open'> </i> Visualizar</button></a>
 
                                                     @if(Auth::check())
                                                         @if(Auth::user()->roles == 3 && 2)
 
-                                                         <a href="{{ route('app.eventos.edit', $evento->id)  }}"><button class="btn btn-info btn-sm">Editar</button></a>
+                                                         <a href="{{ route('app.eventos.edit', $evento->id)  }}"><button class="btn btn-info btn-sm"> <i class='glyphicon glyphicon-edit'> </i> Editar</button></a>
 
-                                                         <a href="{{ route('app.eventos.delete', ['id' => $evento->id])  }}"><button class="btn btn-danger btn-sm">Excluir</button></a>
+                                                         <a href="{{ route('app.eventos.delete', ['id' => $evento->id])  }}"><button class="btn btn-danger btn-sm"> <i class='glyphicon glyphicon-trash'> </i> Excluir</button></a>
                                                         <!-- CORRIGINDO... -->
                                                          {{--<form action="{{ route('app.eventos.delete')}}" method="post">--}}
                                                              {{--<input type="hidden" name="evento_id" value="{{$evento->id}}">--}}

@@ -45,11 +45,11 @@
                                             @if(Auth::check() && Auth::user()->roles > 1)
                                                 <form action="{{ route('app.eventos.aprovar')}}" method="post">
                                                     <input type="hidden" name="evento_id" value="{{$evento->id}}">
-                                                    <a href="#"><button type="submit" class="btn btn-success btn-sm">Aprovar</button></a>
+                                                    <a href="#"><button type="submit" class="btn btn-success btn-sm"> <i class='glyphicon glyphicon-ok'> </i> Aprovar</button></a>
                                                 </form>
                                                 <form action="{{ route('app.eventos.rejeitar')}}" method="post">
                                                     <input type="hidden" name="evento_id" value="{{$evento->id}}">
-                                                    <a href="#"><button type="submit" class="btn btn-danger btn-sm">Rejeitar</button></a>
+                                                    <a href="#"><button type="submit" class="btn btn-danger btn-sm"> <i class='glyphicon glyphicon-remove'> </i> Rejeitar</button></a>
                                                 </form>
                                             @endif
 
